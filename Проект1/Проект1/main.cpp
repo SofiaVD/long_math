@@ -3,11 +3,11 @@
 #include <vector>
 
 #include "LNum.h"
-#include "ILNum.h"
+//#include "ILNum.h"
 
 int main()
 {
-	ILNum a;
+	LNum a;
 	cin >> a;
 	cout << a;
 	system("pause");

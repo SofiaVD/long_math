@@ -2,19 +2,17 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <iterator>
 
 using namespace std;
 
 class LNum {
 private:
-	int len;
-	vector<int> digits;
+	vector<int> digits; //Значение числа хранится перевёрнутым. 
 	friend ostream& operator<<(ostream& os, LNum& a)
 	{
-		for (int i = 0; i < a.len; ++i)
-		{
-			os << a.digits[i];
-		}
+		for (auto it = a.digits.rbegin(); it != a.digits.rend(); --it)
+			os << *it;
 		return os;
 	}
 
@@ -22,15 +20,14 @@ private:
 	{
 		string s;
 		getline(is, s);
-		a.len = s.length();
-		a.digits.resize(a.len);
-		for (int i = 0; i < s.length(); ++i)
+		for (auto it = s.rbegin(); it != s.rend(); --it)
 		{
-			a.digits[i] = s[i] - '0';
+			a.digits.push_back((char)(*it - '0'));
 		}
 		return is;
 	}
 public:
+	int len(); //Метод len, возвращающий длину числа
 	friend bool COM_NN_D(LNum&, LNum&); //N-1 
 	friend bool NZER_N_B(LNum&); //N-2
 	friend void ADD_1N_N(LNum&); //N-3
