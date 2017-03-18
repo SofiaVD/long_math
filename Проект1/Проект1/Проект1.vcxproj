@@ -114,6 +114,7 @@
     <ClCompile Include="ILNum.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="LNum.cpp" />
+    <ClCompile Include="Polynome.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />
@@ -121,6 +122,8 @@
   <ItemGroup>
     <ClInclude Include="ILNum.h" />
     <ClInclude Include="LNum.h" />
+    <ClInclude Include="Polynome.h" />
+    <ClInclude Include="RNum.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

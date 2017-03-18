@@ -3,11 +3,13 @@
 #include <vector>
 
 #include "LNum.h"
-//#include "ILNum.h"
+#include "ILNum.h"
+#include "RNum.h"
+//#include "Polynome.h"
 
 int main()
 {
-	LNum a;
+	RNum a;
 	cin >> a;
 	cout << a;
 	system("pause");
