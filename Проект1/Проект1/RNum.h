@@ -8,15 +8,16 @@
 
 using namespace std;
   
-//Числа вида a/b, вводятся в отдельной строке.
+//Г—ГЁГ±Г«Г  ГўГЁГ¤Г  a/b, ГўГўГ®Г¤ГїГІГ±Гї Гў Г®ГІГ¤ГҐГ«ГјГ­Г®Г© Г±ГІГ°Г®ГЄГҐ.
 class RNum {
 public:
-	friend ostream& operator<<(ostream& os, RNum& ex) //Выводит дробь в виде a/b
+	RNum(ILNum _num, LNum _den): num(_num), den(_den) {};
+	friend ostream& operator<<(ostream& os, RNum& ex) //Г‚Г»ГўГ®Г¤ГЁГІ Г¤Г°Г®ГЎГј Гў ГўГЁГ¤ГҐ a/b
 	{
 		os << ex.num << '/' << ex.den;
 		return os;
 	}
-	friend istream& operator >> (istream& is, RNum& ex) //Считывает дробь вида a/b
+	friend istream& operator >> (istream& is, RNum& ex) //Г‘Г·ГЁГІГ»ГўГ ГҐГІ Г¤Г°Г®ГЎГј ГўГЁГ¤Г  a/b
 	{
 		string s;
 		string s1, s2;
@@ -37,6 +38,6 @@ public:
 	friend RNum MUL_QQ_Q(RNum&, RNum&);
 	friend RNum DIV_QQ_Q(RNum&, RNum&);
 private:
-	ILNum num; //Числитель
-	LNum den;  //Знаменатель
+	ILNum num; //Г—ГЁГ±Г«ГЁГІГҐГ«Гј
+	LNum den;  //Г‡Г­Г Г¬ГҐГ­Г ГІГҐГ«Гј
 };
