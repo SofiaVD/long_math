@@ -12,6 +12,7 @@ class ILNum : public LNum
 public: 
 	ILNum() {};
 	ILNum(const vector<int> &num, bool negative) : negative(negative) , LNum(num) {}
+	ILNum(const LNum& num) : LNum(num) {};
 	void setDigits(string str);
 	friend LNum ABS_Z_N(ILNum&);
 	friend int POZ_Z_D(ILNum&);
