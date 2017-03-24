@@ -21,6 +21,26 @@ istream& operator>>(istream& is, LNum& a)
 	return is;
 }
 
+bool operator==(LNum& num, int n){
+   int i = 0;
+   for(; i < LNum.len() && n; ++i)
+      if(n % 10 != num.digits[i]
+	 return false;
+   return i == LNum.len() && !n;
+}
+
+bool operator==(int n, LNum& num){
+   return operator==(LNum& num, int n);
+}
+	 
+bool operator!=(LNum& num, int n){
+   return !operator==(LNum& num, int n); 
+}
+	
+bool operator!=(int n, LNum& num){
+   return !operator==(LNum& num, int n); 
+}	 
+	 
 bool NZER_N_B(LNum& num)
 {
 	for (int i = 0; i < num.len(); ++i)
