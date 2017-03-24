@@ -12,6 +12,11 @@ struct LNum {
     void setDigits(string& str);
     // Значение числа хранится перевёрнутым. (123 хранится как 3 -> [0], 2 -> [1], 1 -> [2])
     vector<int> digits;
+    explicit LNum(int n) {
+       while(n)
+          digits.push_back(n % 10);
+          n /= 10; 
+    };
 };
 
 ostream& operator<<(ostream&, LNum&);
