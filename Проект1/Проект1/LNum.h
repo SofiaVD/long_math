@@ -12,11 +12,6 @@ struct LNum {
     void setDigits(string& str);
     // Значение числа хранится перевёрнутым. (123 хранится как 3 -> [0], 2 -> [1], 1 -> [2])
     vector<int> digits;
-    explicit LNum(int n) {
-       while(n)
-          digits.push_back(n % 10);
-          n /= 10; 
-    };
 };
 
 ostream& operator<<(ostream&, LNum&);
@@ -30,7 +25,7 @@ Ordinal COM_NN_D(LNum&, LNum&);
 // N-2
 bool NZER_N_B(LNum&);
 // N-3
-Lnum ADD_1N_N(LNum&);
+LNum ADD_1N_N(LNum&);
 // N-4
 LNum ADD_NN_N(LNum&, LNum&);
 // N-5
