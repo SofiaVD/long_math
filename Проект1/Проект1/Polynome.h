@@ -14,7 +14,7 @@ istream& operator >> (istream& is, Polynome& pl);
 
 Polynome ADD_PP_P(Polynome&, Polynome&);
 Polynome SUB_PP_P(Polynome&, Polynome&);
-Polynome MUL_PQ_P(Polynome&, ILNum&);
+Polynome MUL_PQ_P(Polynome&, RNum&);
 Polynome MUL_Pxk_P(Polynome&, int);
 RNum LED_P_Q(Polynome&);
 int DEG_P_N(Polynome&);
