@@ -10,8 +10,8 @@ using namespace std;
 typedef struct ILNum {
 	int len();
 	void setDigits(string& str);
-	bool minus; //отрицательно ли число
-	LNum nPart; //натуральная часть числа
+	bool minus; //Отрицательно ли число
+	LNum nPart; //Натуральная часть числа
 } ILNum;
 
 istream& operator>>(istream&, ILNum&);
