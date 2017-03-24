@@ -1,21 +1,43 @@
 #include "Polynome.h"
 
-vector<string> strToVector(string present)
+ostream& operator<<(ostream& os, Polynome& pl)
 {
-	vector<string> result;
-	result.push_back("");
-	int i = 0;
-	for (auto it = present.begin(); it != present.end(); it++)
+	bool first = true;
+	for (int i = pl.coefficients.size() - 1; i >= 0; --i)
 	{
-		if (*it == ' ')
+		RNum& curCoeff = pl.coefficients[i];
+		if (!NZER_N_B(curCoeff.num.nPart))
 		{
-			++i;
-			result.push_back("");
-		}
-		else
-		{
-			result[i].push_back(*it - '0');
-		}
+			if (!first)
+				cout << ' ' << (curCoeff.num.minus ? '-' : '+') << ' ';
+			else if (curCoeff.num.minus)
+				cout << '-';
+			if (curCoeff.den.len() == 1 && curCoeff.den.digits[0] == 1)
+				os << curCoeff.num.nPart;
+			else
+				os << curCoeff.num.nPart << '/' << curCoeff.den;
+			if (i)
+				cout << "x^" << i;
+			first = false;
+		}		
 	}
-	return result;
+	return os;
+}
+
+istream& operator>>(istream& is, Polynome& pl)
+{
+	int n;
+	cout << "Input degree: ";
+	cin >> n;
+	cin.get();
+	cout << "Input " << ++n << " coefficients" << endl;
+	for (int i = 0; i < n; ++i)
+	{
+		cout << "x^" << n - i - 1 << ": ";
+		RNum buf;
+		cin >> buf;
+		pl.coefficients.push_back(move(buf));
+	}
+	reverse(pl.coefficients.begin(), pl.coefficients.end());
+	return is;
 }

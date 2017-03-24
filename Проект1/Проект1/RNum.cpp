@@ -3,7 +3,10 @@
 // Выводит дробь в виде `a/b`
 ostream& operator<<(ostream& os, RNum& ex) 
 {
-    os << ex.num << '/' << ex.den;
+	if (ex.den.len() == 1 && ex.den.digits[0] == 1)
+		os << ex.num;
+	else
+		os << ex.num << '/' << ex.den;
     return os;
 }
 
