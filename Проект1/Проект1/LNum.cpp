@@ -30,15 +30,15 @@ bool operator==(LNum& num, int n){
 }
 
 bool operator==(int n, LNum& num){
-   return operator==(LNum& num, int n);
+   return operator==(num, n);
 }
 	 
 bool operator!=(LNum& num, int n){
-   return !operator==(LNum& num, int n); 
+   return !operator==(num, n); 
 }
 	
 bool operator!=(int n, LNum& num){
-   return !operator==(LNum& num, int n); 
+   return !operator==(num, n); 
 }	 
 	 
 bool NZER_N_B(LNum& num)
