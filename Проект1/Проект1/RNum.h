@@ -8,11 +8,13 @@
 
 using namespace std;
   
-//×èñëà âèäà a/b, ââîäÿòñÿ â îòäåëüíîé ñòðîêå.
-typedef struct RNum {
-	ILNum num; //×èñëèòåëü
-	LNum den;  //Çíàìåíàòåëü
-} RNum;
+// Числа вида `a/b`, вводятся в отдельной строке.
+struct RNum {
+    // Числитель
+    ILNum num;
+    // Знаменатель
+    LNum den;
+};
 
 ostream& operator<<(ostream&, RNum&);
 istream& operator >> (istream&, RNum&);
