@@ -25,7 +25,7 @@ Ordinal COM_NN_D(LNum&, LNum&);
 // N-2
 bool NZER_N_B(LNum&);
 // N-3
-Lnum ADD_1N_N(LNum&);
+LNum ADD_1N_N(LNum&);
 // N-4
 LNum ADD_NN_N(LNum&, LNum&);
 // N-5
