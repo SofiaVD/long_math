@@ -32,7 +32,7 @@ int LNum::len()
 	return digits.size();
 }
 
-void LNum::setDigits(string str) 
+void LNum::setDigits(string& str) 
 {
 	digits.reserve(str.length());
 	for (int i = str.length() - 1; i >= 0; --i)
@@ -41,22 +41,19 @@ void LNum::setDigits(string str)
 
 LNum ADD_NN_N(LNum& a, LNum& b){
 	LNum c;
-	int l1 = a.length();
-	int l2 = b.length();
+	int l1 = a.len();
+	int l2 = b.len();
 	int minLen = l1 > l2 ? l2 : l1;
 	int maxLen = l1 > l2 ? l1 : l2;
 	c.digits.reserve(maxLen + 1);
 	bool overflow = false;
 	for(int i = 0; i < maxLen; ++i)
 	{
-		c.digits[i] = (i < minLen ? a.digits[i] + b.digits[i] : (l1 > l2 ? a.digits[i] : b.digits[i])) + overflow;
+		c.digits.push_back((i < minLen ? a.digits[i] + b.digits[i] : (l1 > l2 ? a.digits[i] : b.digits[i])) + overflow);
 		overflow = c.digits[i] > 9;
 		c.digits[i] %= 10;
 	}
+	if (overflow)
+		c.digits.push_back(1);
 	return c;
-}
-
-LNum MOD_NN_N(LNum &a, Lnum &b) 
-{ 
-	return SUB_NN_N(a, MUL_NN_N(DIV_NN_N(a, b), b)); 
 }

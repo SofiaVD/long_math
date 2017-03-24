@@ -19,10 +19,10 @@ istream& operator>>(istream& is, RNum& ex) //Ñ÷èòûâàåò äðîáü âè�
 	return is;
 }
 
-RNum DIV_QQ_Q(RNum& a, RNum& b){
+/*RNum DIV_QQ_Q(RNum& a, RNum& b){
 	RNum c;
 	c.num.minus = a.num.minus ^ b.num.minus;
 	c.num.nPart = MUL_NN_N(a.num.nPart, b.den);
 	c.den = MUL_NN_N(a.den, b.num.nPart);
 	return c;
-}
+}*/

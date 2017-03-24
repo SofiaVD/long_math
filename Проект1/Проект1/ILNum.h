@@ -9,7 +9,20 @@ using namespace std;
 
 typedef struct ILNum {
 	int len();
-	void setDigits(string str);
+	void setDigits(string& str);
 	bool minus; // отрицательно ли число 
 	LNum nPart;
 } ILNum;
+
+istream& operator>>(istream&, ILNum&);
+ostream& operator<<(ostream&, ILNum&);
+LNum ABS_Z_N(ILNum&);
+int POZ_Z_D(ILNum&);
+ILNum MUL_ZM_Z(ILNum&);
+ILNum TRANS_N_Z(LNum&);
+LNum TRANS_Z_N(ILNum&);
+ILNum ADD_ZZ_Z(ILNum&, ILNum&);
+ILNum SUB_ZZ_Z(ILNum&, ILNum&);
+ILNum MUL_ZZ_Z(ILNum&, ILNum&);
+ILNum DIV_ZZ_Z(ILNum&, ILNum&);
+ILNum MOD_ZZ_Z(ILNum&, ILNum&);

@@ -19,17 +19,16 @@ istream& operator>>(istream& is, ILNum& a) //Ïåðåãðóçêà îïåðàòî
 	return is;
 }
 
-void ILNum::setDigits(string str) 
+void ILNum::setDigits(string& str) 
 {
-	if (str[0] == '-')
-		minus = true;
+	minus = str[0] == '-';
 	nPart.digits.reserve(str.length() - minus);
 	for (int i = str.length() - 1; i >= minus; --i)
-		digits.push_back(str[i] - '0');
+		nPart.digits.push_back(str[i] - '0');
 }
 
-int LNum::len()
+int ILNum::len()
 {
-	return digits.size();
+	return nPart.len();
 }
 
