@@ -7,12 +7,14 @@
 
 using namespace std;
 
-typedef struct ILNum {
+struct ILNum {
 	int len();
 	void setDigits(string& str);
-	bool minus; //Отрицательно ли число
-	LNum nPart; //Натуральная часть числа
-} ILNum;
+    // Отрицательно ли число
+	bool minus;
+    // Натуральная часть числа
+	LNum nPart;
+};
 
 istream& operator>>(istream&, ILNum&);
 ostream& operator<<(ostream&, ILNum&);
