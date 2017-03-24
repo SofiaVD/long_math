@@ -23,7 +23,7 @@ istream& operator>>(istream& is, LNum& a)
 
 bool operator==(LNum& num, int n){
    int i = 0;
-   for(; i < num.len() && n; ++i)
+   for(; i < num.len() && n; ++i, n /= 10)
       if(n % 10 != num.digits[i])
 	 return false;
    return i == num.len() && !n;
