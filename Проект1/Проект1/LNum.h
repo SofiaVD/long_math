@@ -16,6 +16,10 @@ struct LNum {
 
 ostream& operator<<(ostream&, LNum&);
 istream& operator >> (istream&, LNum&);
+bool operator==(LNum&, int);
+bool operator==(int, LNum&);
+bool operator!=(LNum&, int);
+bool operator!=(int, LNum&);
 // N-1
 Ordinal COM_NN_D(LNum&, LNum&);
 // N-2
