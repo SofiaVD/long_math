@@ -1,8 +1,8 @@
 #include "ILNum.h"
 
-//Àíàëîãè÷íî ñ LNum.h, çàäàíèÿ íà ñàéòå Ïîçäíÿêîâà.
+// Аналогично с LNum.h, задания на сайте Позднякова.
 
-ostream& operator<<(ostream& os, ILNum& a)  //Ïåðåãðóçêà îïåðàòîðà âûâîäà
+ostream& operator<<(ostream& os, ILNum& a)  // Перегрузка оператора вывода
 {
 	if(a.minus)
 		os << '-';
@@ -11,7 +11,7 @@ ostream& operator<<(ostream& os, ILNum& a)  //Ïåðåãðóçêà îïåðàò�
 	return os;
 }
 
-istream& operator>>(istream& is, ILNum& a) //Ïåðåãðóçêà îïåðàòîðà ââîäà
+istream& operator>>(istream& is, ILNum& a) // Перегрузка оператора ввода
 {
 	string s;
 	getline(is, s);
