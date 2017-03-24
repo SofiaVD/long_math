@@ -9,35 +9,7 @@
 using namespace std;
   
 //×èñëà âèäà a/b, ââîäÿòñÿ â îòäåëüíîé ñòðîêå.
-class RNum {
-public:
-	RNum(ILNum _num, LNum _den): num(_num), den(_den) {};
-	friend ostream& operator<<(ostream& os, RNum& ex) //Âûâîäèò äðîáü â âèäå a/b
-	{
-		os << ex.num << '/' << ex.den;
-		return os;
-	}
-	friend istream& operator >> (istream& is, RNum& ex) //Ñ÷èòûâàåò äðîáü âèäà a/b
-	{
-		string s;
-		string s1, s2;
-		getline(is, s);
-		int n = s.find('/', 0);
-		s1 = s.substr(0, n);
-		s2 = (n != -1 ? s.substr(n + 1, s.length() - n) : "1");
-		ex.num.setDigits(s1);
-		ex.den.setDigits(s2);
-		return is;
-	}
-	friend RNum RED_Q_Q(RNum&);
-	friend bool INT_Q_B(RNum&);
-	friend RNum TRANS_Z_Q(ILNum&);
-	friend ILNum TRANS_Q_Z(RNum&);
-	friend RNum ADD_QQ_Q(RNum&, RNum&);
-	friend RNum SUB_QQ_Q(RNum&, RNum&);
-	friend RNum MUL_QQ_Q(RNum&, RNum&);
-	friend RNum DIV_QQ_Q(RNum&, RNum&);
-private:
+typedef struct RNum {
 	ILNum num; //×èñëèòåëü
 	LNum den;  //Çíàìåíàòåëü
-};
+} RNum;
